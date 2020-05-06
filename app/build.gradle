@@ -76,9 +76,6 @@ dependencies {
     annotationProcessor libraries.glide_anotation
 
 
-    // paging library
-    implementation libraries.paging
-
     // constraint layout
     implementation libraries.constraint_version
 }
