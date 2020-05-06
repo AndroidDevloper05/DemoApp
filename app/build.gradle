@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.demo"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug{
+            buildConfigField "String", "DOMAIN_URL", '"https://5e99a9b1bc561b0016af3540.mockapi.io/jet2/api/v1/"'
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    dataBinding {
+        enabled = true
+    }
+    kapt {
+        generateStubs = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libraries.kotlin
+    // AppCompat
+    implementation libraries.androidx_core
+    implementation libraries.support_design
+    implementation libraries.app_compat
+    implementation libraries.recycler_view
+
+    // AppNavigation
+    implementation libraries.navigation_fragment
+    implementation libraries.navigation_ui
+    implementation libraries.navigation_fragment_ktx
+    implementation libraries.navigation_ui_ktx
+
+    // Retrofit
+    implementation libraries.squareup_retrofit
+    implementation libraries.logging_interceptor
+    implementation libraries.gson_core
+    implementation libraries.retrofit
+
+// Room
+    implementation libraries.room_runtime
+    kapt libraries.room_compiler
+
+    //android view model live model
+    implementation  libraries.lifecycle_extensions
+
+    //material design
+    implementation  libraries.material_design
+
+    // glide for image
+    implementation libraries.glide
+    annotationProcessor libraries.glide_anotation
+
+
+    // paging library
+    implementation libraries.paging
+
+    // constraint layout
+    implementation libraries.constraint_version
+}

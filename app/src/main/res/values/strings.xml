@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">DemoProject</string>
+    <string name="server_error">Application is experiencing server issues, please wait for a while and try again in some time.
+    </string>
+    <string name="time_out_error">The request timed out.</string>
+    <string name="net_message">Please check internet connection</string>
+    <string name="net_connected">Internet connected</string>
+    <string name="title_user">User List</string>
+    <string name="no_data">No data found</string>
+    <string name="retry">Retry</string>
+    <string name="just_now">just now</string>
+    <string name="a_min_ago">&#160;a minute </string>
+    <string name="mins_ago">&#160;minutes </string>
+    <string name="an_hour_ago">&#160;an hour </string>
+    <string name="hours_ago">&#160;hours </string>
+    <string name="yesterday">&#160;yesterday</string>
+    <string name="day_ago">&#160;days</string>
+    <string name="comment">&#160;Comment</string>
+    <string name="comments">&#160;Comments</string>
+    <string name="like">&#160;Like</string>
+    <string name="likes">&#160;Likes</string>
+
+</resources>

@@ -1,0 +1,87 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.61'
+    ext.rectrofit_version = '2.4.0'
+    ext.ok_http_version = '3.10.0'
+    ext.appcompat_version_1_0_0 = '1.0.0'
+    ext.appcompat_version_1_0_2 = '1.0.2'
+    ext.navigation_version = '1.0.0'
+    ext.android_support_version = '28.0.0'
+    ext.room_version = "2.2.4"
+    ext.room_compiler = "1.0.0"
+    ext.lifecycle_extensions="2.2.0"
+    ext.material_designing="1.2.0-alpha05"
+    ext.paging_version = "1.0.1"
+    ext.glide_version = "4.9.0"
+    ext.constraint_version = "1.1.3"
+
+
+    ext.libraries = [
+
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            //  api call
+            gson_core             : "com.squareup.retrofit2:converter-gson:$rectrofit_version",
+            logging_interceptor   : "com.squareup.okhttp3:logging-interceptor:$ok_http_version",
+            retrofit              : "com.squareup.retrofit2:retrofit:$rectrofit_version",
+            squareup_retrofit     : "com.squareup.retrofit2:retrofit:$rectrofit_version",
+
+
+            //android core
+            androidx_core         : "androidx.core:core:$appcompat_version_1_0_0",
+            support_design        : "com.android.support:design:$android_support_version",
+            app_compat            : "androidx.appcompat:appcompat:$appcompat_version_1_0_0",
+            recycler_view         : "androidx.recyclerview:recyclerview:$appcompat_version_1_0_0",
+
+            //room data base
+            room_runtime : "android.arch.persistence.room:runtime:$room_version",
+            room_compiler:  "android.arch.persistence.room:compiler:$room_compiler",
+
+            //navigation
+            navigation_fragment  :"android.arch.navigation:navigation-fragment:$navigation_version",
+            navigation_ui :"android.arch.navigation:navigation-ui:$navigation_version",
+            navigation_fragment_ktx : "android.arch.navigation:navigation-fragment-ktx:$navigation_version",
+            navigation_ui_ktx : "android.arch.navigation:navigation-ui-ktx:$navigation_version",
+
+            // android architecture component
+            lifecycle_extensions: "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions",
+
+            // material design
+            material_design: "com.google.android.material:material:$material_designing",
+
+            // glide for image
+            glide: "com.github.bumptech.glide:glide:$glide_version",
+            glide_anotation: "com.github.bumptech.glide:compiler:$glide_version",
+            // paging library
+            paging: "android.arch.paging:runtime:$paging_version",
+            // constraint layout
+            constraint_version: "com.android.support.constraint:constraint-layout:$constraint_version",
+
+
+
+    ]
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
